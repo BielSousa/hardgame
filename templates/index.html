@@ -1,0 +1,51 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}This is an example page{% endblock %}
+
+{% block styles %}
+{{super()}}
+<link rel="stylesheet"
+      href="{{url_for('static', filename='css/forca.css')}}">
+<link rel="stylesheet"
+      href="{{url_for('static', filename='css/nave.css')}}">
+{% endblock %}
+
+{% block scripts %}
+    {{super()}}
+    <script src="{{url_for('static', filename='js/requests.js')}}"></script>
+    <script src="{{url_for('static', filename='js/forca.js')}}"></script>
+    <script src="{{url_for('static', filename='js/nave.js')}}"></script>
+{% endblock %}
+
+{% block navbar %}
+<div class="navbar navbar-fixed-top">
+  <!-- ... -->
+</div>
+{% endblock %}
+
+{% block content %}
+
+    <div class="container-fluid">
+        <div id="gameForca">
+            <div id="areaPointForca">
+                <div>
+                    <h3>Chances: <span  id="chances">4</span></h3>
+                </div>
+            </div>
+            <div id="areaForca">
+                <div id="desenhoForca"></div>
+                <div id="corda1"></div>
+                <div id="corda2"></div>
+                <div id="homem-cabeca"></div>
+                <div id="homem-corpo"></div>
+                <div id="homem-bracos"><div id="direito"></div><div id="esquerdo"></div></div>
+                <div id="homem-pernas"><div id="direito"></div><div id="esquerdo"></div></div>
+                <div id="areaPalavras"></div>
+            </div>
+            <div id="aviso"></div>
+        </div>
+        <div id="gameNave">
+            <div id="nave"></div>
+        </div>
+    </div>
+
+{% endblock %}
