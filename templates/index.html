@@ -4,6 +4,8 @@
 {% block styles %}
 {{super()}}
 <link rel="stylesheet"
+      href="{{url_for('static', filename='css/main.css')}}">
+<link rel="stylesheet"
       href="{{url_for('static', filename='css/forca.css')}}">
 <link rel="stylesheet"
       href="{{url_for('static', filename='css/nave.css')}}">
@@ -24,28 +26,30 @@
 
 {% block content %}
 
-    <div class="container-fluid">
-        <div id="gameForca">
-            <div id="areaPointForca">
-                <div>
-                    <h3>Chances: <span  id="chances">4</span></h3>
+    <div class="container-fluid">   
+        <div class="row flex-row">
+            <div id="gameForca">
+                <div id="areaPointForca">
+                    <div>
+                        <h3>Chances: <span  id="chances">4</span></h3>
+                    </div>
                 </div>
+                <div id="areaForca">
+                    <div id="desenhoForca"></div>
+                    <div id="corda1"></div>
+                    <div id="corda2"></div>
+                    <div id="homem-cabeca"></div>
+                    <div id="homem-corpo"></div>
+                    <div id="homem-bracos"><div id="direito"></div><div id="esquerdo"></div></div>
+                    <div id="homem-pernas"><div id="direito"></div><div id="esquerdo"></div></div>
+                    <div id="areaPalavras"></div>
+                </div>
+                <div id="aviso"></div>
             </div>
-            <div id="areaForca">
-                <div id="desenhoForca"></div>
-                <div id="corda1"></div>
-                <div id="corda2"></div>
-                <div id="homem-cabeca"></div>
-                <div id="homem-corpo"></div>
-                <div id="homem-bracos"><div id="direito"></div><div id="esquerdo"></div></div>
-                <div id="homem-pernas"><div id="direito"></div><div id="esquerdo"></div></div>
-                <div id="areaPalavras"></div>
+            <div id="gameNave">
+                <canvas id="myCanvas" width="600" height="700" style="border:1px solid #000000;">
+                </canvas>
             </div>
-            <div id="aviso"></div>
-        </div>
-        <div id="gameNave">
-            <div id="nave"></div>
         </div>
     </div>
-
 {% endblock %}
