@@ -12,7 +12,7 @@ function show_palavra(http){
     });
 }
 
-function verify_letter(letra){
+function verify_letter(letra, jogador){
     if(!is_end){
         var letras = document.getElementById("areaPalavras").getElementsByTagName('div')
         var palavra = sessionStorage.getItem('palavra')
@@ -25,9 +25,9 @@ function verify_letter(letra){
         indexs.push(has_letter[1])
         if(has_letter[0]){
             letras[has_letter[1]].innerText = letra.toUpperCase()
-            verify_victory()
+            verify_victory(jogador)
         }else{
-            draw_man()
+            draw_man(jogador)
         }
     }
 }
@@ -38,6 +38,8 @@ function draw_man(){
     sessionStorage.setItem('sequencia', parseInt(sessionStorage.getItem('sequencia'))+1 )
     if(parseInt(sessionStorage.getItem('sequencia')) === 4 ){
         is_end = true
+        jogador.end_game = true
+        document.getElementById('chances').innerText = 4 - parseInt(sessionStorage.getItem('sequencia'))
         document.getElementById('aviso').innerText ='Você perdeu tente novamente'
 
     }else{
@@ -52,6 +54,7 @@ function verify_victory(){
         palavra = palavra + letra.innerText
         })
     if(palavra === sessionStorage.getItem('palavra').toUpperCase()){
+        jogador.end_game = true
         is_end = true
         document.getElementById('aviso').innerText = 'Parabéns voce ganhou'
     }

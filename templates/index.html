@@ -18,12 +18,6 @@
     <script src="{{url_for('static', filename='js/nave.js')}}"></script>
 {% endblock %}
 
-{% block navbar %}
-<div class="navbar navbar-fixed-top">
-  <!-- ... -->
-</div>
-{% endblock %}
-
 {% block content %}
 
     <div class="container-fluid">   
@@ -46,8 +40,9 @@
                 </div>
                 <div id="aviso"></div>
             </div>
-            <div id="gameNave">
-                <canvas id="myCanvas" width="600" height="700" style="border:1px solid #000000;">
+            <div class="d-flex flex-column" id="gameNave">
+                <button onclick="init(true)"> Começar</button>
+                <canvas id="myCanvas" style="border:1px solid #000000;">
                 </canvas>
             </div>
         </div>

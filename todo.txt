@@ -1,0 +1,14 @@
+TODO INICIAL
+Feito
+    - Implementar function de criar inimigos - OK
+    - Implementar queda de items Ok
+    - Implementar queda de letras OK
+    - Implementar variáveis globais para organizar o codigo OK
+    - Implementar barreira OK
+    - Implementar qtd tiros OK
+A fazer
+    - Implementar velocidade x
+    - Unificar pegar letras com forca
+    - Implementar limites dos itens
+    - Implementar limite de naves inimigas
+    - Implementar niveis
